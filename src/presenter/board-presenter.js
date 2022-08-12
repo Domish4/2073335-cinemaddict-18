@@ -5,8 +5,6 @@ import MovieListView from '../view/movie-list-view.js';
 import LoadMoreButtonView from '../view/load-more-button-view.js';
 import { render } from '../render.js';
 
-const MAX_MOVIE_COUNT = 5;
-
 export default class BoardPresenter {
   contentComponent = new ContentView();
   movieListComponent = new MovieListView();
