@@ -1,6 +1,6 @@
 import { createElement } from '../render.js';
 
-const createFooterTemplate = () => (
+const createViewTemplate = () => (
   `<section class="footer__statistics">
   <p>130 291 movies inside</p>
 </section>`
@@ -8,7 +8,7 @@ const createFooterTemplate = () => (
 
 export default class FooterView {
   getTemplate() {
-    return createFooterTemplate();
+    return createViewTemplate();
   }
 
   getElement() {
