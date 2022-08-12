@@ -1,14 +1,16 @@
-import LoadMoreButtonView from '../view/load-more-button-view.js';
-import FilmCardsView from '../view/movie-card-view.js';
 import ContentView from '../view/content-view.js';
+import MovieListWrapperView from '../view/movie-list-wrapper-view.js';
 import MovieListView from '../view/movie-list-view.js';
-import filmsListWrapperView from '../view/films-list-wrapper-view.js';
+//import MovieCardsView from '../view/movie-cards-view.js';
+import LoadMoreButtonView from '../view/load-more-button-view.js';
 import { render } from '../render.js';
+
+const MAX_MOVIE_COUNT = 5;
 
 export default class BoardPresenter {
   contentComponent = new ContentView();
   movieListComponent = new MovieListView();
-  movieWrapperComponent = new filmsListWrapperView();
+  movieWrapperComponent = new MovieListWrapperView();
 
   init = (contentContainer) => {
     this.contentContainer = contentContainer;
@@ -16,9 +18,6 @@ export default class BoardPresenter {
     render(this.contentComponent, this.contentContainer);
     render(this.movieWrapperComponent, this.contentComponent.getElement());
     render(this.movieListComponent, this.movieWrapperComponent.getElement());
-    for (let i = 0; i < 5; i++) {
-      render(new FilmCardsView(), this.movieListComponent.getElement());
-    }
     render(new LoadMoreButtonView(), this.contentComponent.getElement());
   };
 }

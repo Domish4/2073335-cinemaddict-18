@@ -1,10 +1,10 @@
 import { createElement } from '../render.js';
 
-const createFilmsListWrapperTemplate = () => '<section class="films-list"></section>';
+const createMovieListWrapperTemplate = () => '<section class="films-list"></section>';
 
-export default class filmsListWrapperView {
+export default class MovieListWrapperView {
   getTemplate() {
-    return createFilmsListWrapperTemplate();
+    return createMovieListWrapperTemplate();
   }
 
   getElement() {
